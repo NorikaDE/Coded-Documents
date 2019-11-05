@@ -69,7 +69,7 @@ namespace Documentation.Markdown.Container
 
             foreach (IPrintableDocumentChapter chapter in Chapters)
             {
-                markdownStringBuilder.AppendLine(chapter.Print());
+                markdownStringBuilder.Append($"{chapter.Print()}\n");
             }
 
             return markdownStringBuilder.ToString().TrimEnd();

@@ -21,7 +21,7 @@ namespace Documentation.Markdown.Elements
             builder.Append("```");
             builder.Append(Language);
             builder.Append('\n');
-            builder.AppendJoin(Environment.NewLine, Content);
+            builder.AppendJoin('\n', Content);
             builder.Append('\n');
             builder.Append("```");
 
