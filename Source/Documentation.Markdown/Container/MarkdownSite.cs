@@ -91,7 +91,7 @@ namespace Documentation.Markdown.Container
 
             foreach (IPrintable printable in Content)
             {
-                stringBuilder.AppendLine(printable.Print());
+                stringBuilder.Append($"{printable.Print()}\n");
             }
 
             return stringBuilder.ToString();

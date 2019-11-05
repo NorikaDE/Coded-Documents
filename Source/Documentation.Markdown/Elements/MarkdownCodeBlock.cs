@@ -20,9 +20,9 @@ namespace Documentation.Markdown.Elements
 
             builder.Append("```");
             builder.Append(Language);
-            builder.AppendLine();
+            builder.Append('\n');
             builder.AppendJoin(Environment.NewLine, Content);
-            builder.AppendLine();
+            builder.Append('\n');
             builder.Append("```");
 
             return builder.ToString();
