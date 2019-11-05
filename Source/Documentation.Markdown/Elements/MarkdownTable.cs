@@ -27,7 +27,7 @@ namespace Documentation.Markdown.Elements
                     builder.Append(MarkdownStatics.MarkdownTableColumnSeparator);
                 }
 
-                builder.AppendLine();
+                builder.Append('\n');
                 builder.Append(MarkdownStatics.MarkdownTableColumnSeparator);
                 
                 foreach (PrintableParagraphTableRowSpecification headerSpecification in _headers)
@@ -36,12 +36,12 @@ namespace Documentation.Markdown.Elements
                     builder.Append(MarkdownStatics.MarkdownTableColumnSeparator);
                 }
 
-                builder.AppendLine();
+                builder.Append('\n');
             }
 
             foreach (IPrintableParagraphTableDataRow dataRow in _rows)
             {
-                builder.AppendLine(dataRow.Print());
+                builder.Append($"{dataRow.Print()}\n");
             }
 
             return builder.ToString().TrimEnd();
