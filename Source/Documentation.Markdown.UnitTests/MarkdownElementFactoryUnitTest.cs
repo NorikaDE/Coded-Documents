@@ -2,10 +2,10 @@ using Documentation.Core.Types;
 using Documentation.Markdown.Container;
 using Documentation.Markdown.Container.Interfaces;
 using Documentation.Markdown.Elements;
-using Documentation.Markdown.UnitTest.TestTypes.Interfaces;
+using Documentation.Markdown.UnitTests.TestTypes.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Documentation.Markdown.UnitTest
+namespace Documentation.Markdown.UnitTests
 {
     [TestClass]
     public class MarkdownElementFactoryUnitTest

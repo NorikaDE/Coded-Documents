@@ -5,7 +5,7 @@ using Documentation.Markdown.Elements;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Documentation.Markdown.UnitTest
+namespace Documentation.Markdown.UnitTests
 {
     [TestClass]
     public class MarkdownTableUnitTest

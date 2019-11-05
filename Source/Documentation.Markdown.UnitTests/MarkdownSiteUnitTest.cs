@@ -4,7 +4,7 @@ using Documentation.Markdown.Container.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace Documentation.Markdown.UnitTest
+namespace Documentation.Markdown.UnitTests
 {
     [TestClass]
     public class MarkdownSiteUnitTest

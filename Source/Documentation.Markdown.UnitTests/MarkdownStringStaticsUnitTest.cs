@@ -2,7 +2,7 @@ using System;
 using Documentation.Markdown.Statics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Documentation.Markdown.UnitTest
+namespace Documentation.Markdown.UnitTests
 {
 
     [TestClass]

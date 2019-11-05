@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Core.Types", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Markdown", "Documentation.Markdown\Documentation.Markdown.csproj", "{D862C999-6B33-449D-85D4-8CB1C073C609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Markdown.UnitTest", "Documentation.Markdown.UnitTest\Documentation.Markdown.UnitTest.csproj", "{4B19F16B-3D54-4753-907A-B2B922F483A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Markdown.UnitTests", "Documentation.Markdown.UnitTests\Documentation.Markdown.UnitTests.csproj", "{4B19F16B-3D54-4753-907A-B2B922F483A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Core", "Documentation.Core\Documentation.Core.csproj", "{F18F544A-8E02-4A67-85D1-B67392CDDDAF}"
 EndProject
