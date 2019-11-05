@@ -87,7 +87,7 @@ namespace Documentation.Markdown.Container
         public string Print()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine(_headerBuilder.CreateHeader(Title));
+            stringBuilder.Append($"{_headerBuilder.CreateHeader(Title)}\n");
 
             foreach (IPrintable printable in Content)
             {

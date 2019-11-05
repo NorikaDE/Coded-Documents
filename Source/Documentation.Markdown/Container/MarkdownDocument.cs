@@ -65,7 +65,7 @@ namespace Documentation.Markdown.Container
         public string Print()
         {
             StringBuilder markdownStringBuilder = new StringBuilder();
-            markdownStringBuilder.AppendLine(_headerBuilder.CreateHeader(Title));
+            markdownStringBuilder.Append($"{_headerBuilder.CreateHeader(Title)}\n");
 
             foreach (IPrintableDocumentChapter chapter in Chapters)
             {
