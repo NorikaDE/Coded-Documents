@@ -9,6 +9,7 @@
                         <ModulePaths> 
                             <Include> 
                                 <ModulePath>.*\Norika.*.dll</ModulePath> 
+                                <ModulePath>.*\Documentation.*.dll</ModulePath> 
                             </Include> 
                             <Exclude> 
                                 <ModulePath>.*tests.dll</ModulePath> 
