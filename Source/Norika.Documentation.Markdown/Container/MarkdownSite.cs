@@ -10,24 +10,20 @@ namespace Norika.Documentation.Markdown.Container
     /// </summary>
     public class MarkdownSite : IMarkdownSite
     {
-        
         /// <summary>
         /// The builder that is used to create all headers in the document
         /// </summary>
         private IMarkdownHeaderBuilder _headerBuilder;
         
-        
         /// <summary>
         /// List of body contents in the markdown paragraph
         /// </summary>
         private readonly List<IPrintable> _content = new List<IPrintable>();
-        
-        
+
         /// <summary>
         /// Factory for creating new markdown elements
         /// </summary>
         private readonly IPrintableMarkdownElementFactory _elementFactory;
-
         
         /// <summary>
         /// Creates a new markdown site
@@ -39,19 +35,35 @@ namespace Norika.Documentation.Markdown.Container
             _elementFactory = elementFactory;
             Title = title;
         }
-    
+        
+        /// <summary>
+        /// Creates a new markdown site
+        /// </summary>
+        /// <param name="title">Title of the markdown site</param>
+        public MarkdownSite(string title) : this(title, new MarkdownElementFactory()) {}
+
+
+        /// <summary>
+        /// Creates a new markdown site
+        /// </summary>
+        /// <param name="title">Title of the markdown site</param>
+        /// <param name="elementFactory">Factory for creating further markdown elements</param>
+        /// <param name="headerBuilder">The header builder that is used for new sub pages</param>
+        public MarkdownSite(string title, IPrintableMarkdownElementFactory elementFactory,
+            IMarkdownHeaderBuilder headerBuilder) : this(title, elementFactory)
+        {
+            SetHeaderBuilder(headerBuilder);
+        }
         
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentChapter.Title"/>
         /// </summary>
         public string Title { get; set; }
-
         
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentChapter.Content"/>
         /// </summary>
         public IList<IPrintable> Content => _content.AsReadOnly();
-        
         
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentChapter.AddNewContent{T}"/>
@@ -63,7 +75,6 @@ namespace Norika.Documentation.Markdown.Container
             
             return newContentObject;
         }
-
         
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentChapter.AddNewParagraph"/>
@@ -79,7 +90,6 @@ namespace Norika.Documentation.Markdown.Container
             
             return (IPrintableDocumentParagraph) newParagraphObject;
         }
-
         
         /// <summary>
         /// <inheritdoc cref="IPrintable.Print"/>
@@ -96,7 +106,6 @@ namespace Norika.Documentation.Markdown.Container
 
             return stringBuilder.ToString();
         }
-
         
         /// <summary>
         /// <inheritdoc cref="IHeaderContainer.SetHeaderBuilder"/>
@@ -105,7 +114,6 @@ namespace Norika.Documentation.Markdown.Container
         {
             _headerBuilder = headerBuilder;
         }
-
         
         /// <summary>
         /// <inheritdoc cref="IHeaderContainer.HeaderContent"/>

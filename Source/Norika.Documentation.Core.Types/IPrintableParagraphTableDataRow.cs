@@ -17,7 +17,5 @@ namespace Norika.Documentation.Core.Types
         /// </summary>
         /// <param name="s"></param>
         void Add(string s);
-
-       
     }
 }

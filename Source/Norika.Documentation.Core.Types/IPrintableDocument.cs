@@ -12,20 +12,17 @@ namespace Norika.Documentation.Core.Types
         /// Author of the document
         /// </summary>
         string Author { get; }
-        
-        
+
         /// <summary>
         /// Title of the document
         /// </summary>
         string Title { get; set; }
-        
-        
+
         /// <summary>
         /// Default extension of the target output file
         /// </summary>
         string DefaultFileExtension { get; }
-        
-        
+
         /// <summary>
         /// Chapters of the document
         /// </summary>
@@ -37,7 +34,6 @@ namespace Norika.Documentation.Core.Types
         /// <param name="title">Title of the chapter</param>
         /// <returns>New chapter</returns>
         IPrintableDocumentChapter AddNewChapter(string title);
-
         
         /// <summary>
         /// Creates a new printable.

@@ -18,7 +18,6 @@ namespace Norika.Documentation.Core.FileSystem
             return File.Exists(path);
         }
 
-        
         /// <summary>
         /// <inheritdoc cref="IFileWriter.WriteAllLines"/>
         /// </summary>

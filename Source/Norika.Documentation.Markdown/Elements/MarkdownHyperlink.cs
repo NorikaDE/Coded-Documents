@@ -30,7 +30,6 @@ namespace Norika.Documentation.Markdown.Elements
         /// </summary>
         public MarkdownHyperlink(){}
         
-        
         /// <summary>
         /// <inheritdoc cref="IPrintable.Print"/>
         /// </summary>

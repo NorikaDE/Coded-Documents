@@ -34,6 +34,28 @@ namespace Norika.Documentation.Markdown.UnitTests
         }
         
         [TestMethod]
+        public void CreateElement_FromContainerType_ShouldReturnDefaultValueNull()
+        {
+            MarkdownElementFactory factory = new MarkdownElementFactory();
+
+            IMarkdownParagraph element =
+                factory.CreateElement<IMarkdownParagraph>();
+            
+            Assert.IsNull(element);
+        }
+        
+        [TestMethod]
+        public void CreateMarkdownContainer_FromIMarkdownParagraph_ShouldReturnInstanceOfMarkdownParagraph()
+        {
+            MarkdownElementFactory factory = new MarkdownElementFactory();
+
+            IMarkdownParagraph paragraph =
+                factory.CreateMarkdownContainer<IMarkdownParagraph>("Test");
+            
+            Assert.IsInstanceOfType(paragraph, typeof(MarkdownParagraph));
+        }
+        
+        [TestMethod]
         public void CreateElement_FromIDocumentCodeBlockContent_ShouldReturnInstanceOfMarkdownChapterString()
         {
             MarkdownElementFactory factory = new MarkdownElementFactory();

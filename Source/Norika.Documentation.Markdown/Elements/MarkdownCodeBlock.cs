@@ -27,19 +27,16 @@ namespace Norika.Documentation.Markdown.Elements
 
             return builder.ToString();
         }
-
         
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentCodeBlock.Language"/>
         /// </summary>
         public string Language { get; private set; }
-        
-        
+
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentCodeBlock.Content"/>
         /// </summary>
         public IList<string> Content { get; } = new List<string>();
-        
         
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentCodeBlock.AppendContent(IList{string})"/>
@@ -49,7 +46,6 @@ namespace Norika.Documentation.Markdown.Elements
             (Content as List<string>)?.AddRange(content);
         }
         
-        
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentCodeBlock.AppendContentLine()"/>
         /// </summary>
@@ -57,7 +53,6 @@ namespace Norika.Documentation.Markdown.Elements
         {
             Content.Add(string.Empty);
         }
-
         
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentCodeBlock.AppendContentLine()"/>
@@ -66,8 +61,7 @@ namespace Norika.Documentation.Markdown.Elements
         {
             Content.Add(content);
         }
-
-
+        
         /// <summary>
         /// <inheritdoc cref="IPrintableDocumentCodeBlock.SetLanguage(string)"/>
         /// </summary>

@@ -14,8 +14,7 @@ namespace Norika.Documentation.Markdown
         /// Represents the current nest depth
         /// </summary>
         public int NestedDepth { get; set; }
-        
-        
+
         /// <summary>
         /// <inheritdoc cref="IMarkdownHeaderBuilder.CreateHeader"/>
         /// </summary>

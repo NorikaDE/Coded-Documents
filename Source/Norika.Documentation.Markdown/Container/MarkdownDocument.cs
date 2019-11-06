@@ -26,7 +26,6 @@ namespace Norika.Documentation.Markdown.Container
         /// </summary>
         private readonly IPrintableMarkdownElementFactory _factory;
         
-
         /// <summary>
         /// Creates a new markdown document
         /// </summary>
@@ -52,12 +51,10 @@ namespace Norika.Documentation.Markdown.Container
             _factory = factory;
         }
         
-        
         /// <summary>
         /// Creates a new markdown document
         /// </summary>
         public MarkdownDocument() : this(string.Empty) { }
-
         
         /// <summary>
         /// <inheritdoc cref="IPrintable.Print"/>
@@ -79,8 +76,7 @@ namespace Norika.Documentation.Markdown.Container
         /// <inheritdoc cref="IPrintableDocument.Author"/>
         /// </summary>
         public string Author { get; set; }
-        
-        
+
         /// <summary>
         /// <inheritdoc cref="IPrintableDocument.Title"/>
         /// </summary>

@@ -27,7 +27,6 @@ namespace Norika.Documentation.Markdown.Statics
         /// </summary>
         public static string MarkdownTableColumnSeparator = "|";
         
-        
         /// <summary>
         /// Creates a markdown header prefix dependent on the given
         /// depth.
@@ -48,7 +47,5 @@ namespace Norika.Documentation.Markdown.Statics
             }
             return header;
         }
-        
-        
     }
 }

@@ -11,6 +11,15 @@ namespace Norika.Documentation.Markdown.UnitTests
     public class MarkdownSiteUnitTest
     {
         [TestMethod]
+        public void Create_WithTitle_ShouldSetTitle()
+        {
+            
+            MarkdownSite site = new MarkdownSite("Test");
+            
+            Assert.AreEqual("Test", site.Title);
+        }   
+        
+        [TestMethod]
         public void AddNewContent_WithParagraphHyperlink_ShouldCallFactoryForCreateAParagraphHyperlink()
         {
             Mock<IPrintableMarkdownElementFactory> elementFactoryMock = new Mock<IPrintableMarkdownElementFactory>();
@@ -20,6 +29,55 @@ namespace Norika.Documentation.Markdown.UnitTests
             site.AddNewContent<IPrintableDocumentParagraphHyperlink>();
             
             elementFactoryMock.Verify(f => f.CreateElement<IPrintableDocumentParagraphHyperlink>(), Times.Exactly(1));
+        }   
+        
+        [TestMethod]
+        public void AddNewParagraph_WithParagraphTitle_ShouldCallFactoryForCreateANewParagraphWithTheGivenTitle()
+        {
+            Mock<IPrintableMarkdownElementFactory> elementFactoryMock = new Mock<IPrintableMarkdownElementFactory>();
+            Mock<IMarkdownParagraph> markdownParagraphMock = new Mock<IMarkdownParagraph>();
+            elementFactoryMock.Setup(f => f.CreateMarkdownContainer<IMarkdownParagraph>(It.IsAny<string>()))
+                .Returns(markdownParagraphMock.Object);
+            Mock<IMarkdownHeaderBuilder> headerBuilderMock = new Mock<IMarkdownHeaderBuilder>();
+            
+            MarkdownSite site = new MarkdownSite("Test", elementFactoryMock.Object, headerBuilderMock.Object);
+
+            site.AddNewParagraph("Paragraph");
+            
+            elementFactoryMock.Verify(f => f.CreateMarkdownContainer<IMarkdownParagraph>(
+                It.Is((string s) => s.Equals("Paragraph"))), Times.Exactly(1));
+        }   
+        
+        [TestMethod]
+        public void AddNewParagraph_WithParagraphTitle_ShouldSetHeaderBuilderToNewCreatedObject()
+        {
+            Mock<IPrintableMarkdownElementFactory> elementFactoryMock = new Mock<IPrintableMarkdownElementFactory>();
+            Mock<IMarkdownParagraph> markdownParagraphMock = new Mock<IMarkdownParagraph>();
+            elementFactoryMock.Setup(f => f.CreateMarkdownContainer<IMarkdownParagraph>(It.IsAny<string>()))
+                .Returns(markdownParagraphMock.Object);
+            Mock<IMarkdownHeaderBuilder> headerBuilderMock = new Mock<IMarkdownHeaderBuilder>();
+            
+            MarkdownSite site = new MarkdownSite("Test", elementFactoryMock.Object, headerBuilderMock.Object);
+
+            site.AddNewParagraph("Paragraph");
+            
+            markdownParagraphMock.Verify(p => p.SetHeaderBuilder(It.IsAny<IMarkdownHeaderBuilder>()));
+        }   
+        
+        [TestMethod]
+        public void AddNewParagraph_WithParagraphTitle_ShouldCloneTheHeaderBuilderOfTheCurrentObject()
+        {
+            Mock<IPrintableMarkdownElementFactory> elementFactoryMock = new Mock<IPrintableMarkdownElementFactory>();
+            Mock<IMarkdownParagraph> markdownParagraphMock = new Mock<IMarkdownParagraph>();
+            elementFactoryMock.Setup(f => f.CreateMarkdownContainer<IMarkdownParagraph>(It.IsAny<string>()))
+                .Returns(markdownParagraphMock.Object);
+            Mock<IMarkdownHeaderBuilder> headerBuilderMock = new Mock<IMarkdownHeaderBuilder>();
+            
+            MarkdownSite site = new MarkdownSite("Test", elementFactoryMock.Object, headerBuilderMock.Object);
+
+            site.AddNewParagraph("Paragraph");
+            
+            headerBuilderMock.Verify(hb => hb.Clone(), Times.Exactly(1));
         }   
         
         [TestMethod]

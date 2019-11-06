@@ -38,7 +38,6 @@ namespace Norika.Documentation.Markdown
             return default(T);
         }
 
-        
         /// <summary>
         /// <inheritdoc cref="IPrintableMarkdownElementFactory.CreateMarkdownContainer{T}"/>
         /// </summary>
@@ -61,6 +60,5 @@ namespace Norika.Documentation.Markdown
 
             return default(T);
         }
-        
     }
 }
