@@ -14,7 +14,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   runSettings: 'Settings/UnitTest.runsettings'
-  rootNameSpace: 'Documentation'
+  rootNameSpace: 'Norika.Documentation'
   packgeVersion: "0.1.0-alpha$(Build.BuildId)"
 
 steps:
