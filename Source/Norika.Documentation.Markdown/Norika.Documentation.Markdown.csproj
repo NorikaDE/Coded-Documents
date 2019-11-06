@@ -2,7 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <PackageVersion />
+    <Title>Coded document creation | Markdown Extension</Title>
+    <PackageDescription>This class library contains the implementation for creating markdown documents from code.</PackageDescription>
+    <Description>This class library contains the implementation for creating markdown documents from code. Implementation for the base model.</Description>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\Build\NuGet\Versioning.props">
+      <Link>Versioning\Versioning.props</Link>
+    </Content>
+  </ItemGroup>
+
+  <Import Project="$(MsBuildThisFileDirectory)\..\..\Build\NuGet\Versioning.props" />
 
   <ItemGroup>
     <ProjectReference Include="..\Norika.Documentation.Core.Types\Norika.Documentation.Core.Types.csproj" />

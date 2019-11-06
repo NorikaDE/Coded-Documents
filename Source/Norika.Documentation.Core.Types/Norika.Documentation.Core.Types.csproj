@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <PackageVersion />
+    <Title>Coded document creation | Model</Title>
+    <PackageDescription>This class library contains the model and typed for creating documents from code.</PackageDescription>
+    <Description>This class library contains the model and typed for creating documents from code.</Description>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\Build\NuGet\Versioning.props">
+      <Link>Versioning\Versioning.props</Link>
+    </Content>
+  </ItemGroup>
+
+  <Import Project="$(MsBuildThisFileDirectory)\..\..\Build\NuGet\Versioning.props" />
 
 </Project>
