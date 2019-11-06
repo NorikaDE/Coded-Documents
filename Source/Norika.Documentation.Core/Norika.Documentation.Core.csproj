@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\..\Build\NuGet\Versioning.props">
+    <None Include="..\..\Build\NuGet\Versioning.props">
       <Link>Versioning\Versioning.props</Link>
-    </Content>
+    </None>
   </ItemGroup>
 
   <Import Project="$(MsBuildThisFileDirectory)\..\..\Build\NuGet\Versioning.props" />
