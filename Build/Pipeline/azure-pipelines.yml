@@ -35,7 +35,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(Agent.BuildDirectory)'
-    Contents: '**/bin/Release/*.dll'
+    Contents: '**/bin/Release/**/Documentation*.dll'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     flattenFolders: true
     
