@@ -31,6 +31,13 @@ steps:
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Agent.BuildDirectory)'
+    Contents: '**/bin/Release/*.dll'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    flattenFolders: true
     
 - task: DotNetCoreCLI@2
   displayName: Run Tests
