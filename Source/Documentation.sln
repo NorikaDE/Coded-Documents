@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Core.Types", "Documentation.Core.Types\Documentation.Core.Types.csproj", "{5BC0FE5D-4613-425A-926C-747BA2E157A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Norika.Documentation.Core.Types", "Norika.Documentation.Core.Types\Norika.Documentation.Core.Types.csproj", "{5BC0FE5D-4613-425A-926C-747BA2E157A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Markdown", "Documentation.Markdown\Documentation.Markdown.csproj", "{D862C999-6B33-449D-85D4-8CB1C073C609}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Norika.Documentation.Markdown", "Norika.Documentation.Markdown\Norika.Documentation.Markdown.csproj", "{D862C999-6B33-449D-85D4-8CB1C073C609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Markdown.UnitTests", "Documentation.Markdown.UnitTests\Documentation.Markdown.UnitTests.csproj", "{4B19F16B-3D54-4753-907A-B2B922F483A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Norika.Documentation.Markdown.UnitTests", "Norika.Documentation.Markdown.UnitTests\Norika.Documentation.Markdown.UnitTests.csproj", "{4B19F16B-3D54-4753-907A-B2B922F483A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Core", "Documentation.Core\Documentation.Core.csproj", "{F18F544A-8E02-4A67-85D1-B67392CDDDAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Norika.Documentation.Core", "Norika.Documentation.Core\Norika.Documentation.Core.csproj", "{F18F544A-8E02-4A67-85D1-B67392CDDDAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Core.UnitTests", "Documentation.Core.UnitTests\Documentation.Core.UnitTests.csproj", "{939C992E-22D9-4176-BE68-60358CD0A6AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Norika.Documentation.Core.UnitTests", "Norika.Documentation.Core.UnitTests\Norika.Documentation.Core.UnitTests.csproj", "{939C992E-22D9-4176-BE68-60358CD0A6AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation.Core.IntegrationTests", "Documentation.Core.IntegrationTests\Documentation.Core.IntegrationTests.csproj", "{6D0978D2-820A-427C-B9F5-37FDEEB6F5D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Norika.Documentation.Core.IntegrationTests", "Norika.Documentation.Core.IntegrationTests\Norika.Documentation.Core.IntegrationTests.csproj", "{6D0978D2-820A-427C-B9F5-37FDEEB6F5D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
