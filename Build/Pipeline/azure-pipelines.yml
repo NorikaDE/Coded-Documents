@@ -15,6 +15,7 @@ variables:
   buildConfiguration: 'Release'
   runSettings: 'Settings/UnitTest.runsettings'
   rootNameSpace: 'Documentation'
+  packgeVersion: "0.1.0-alpha$(Build.BuildId)"
 
 steps:
 - task: NuGetToolInstaller@1
@@ -56,7 +57,8 @@ steps:
     packagesToPack: '**/*.csproj'
     packDirectory: '$(Build.ArtifactStagingDirectory)/Packages'
     nobuild: true
-    versioningScheme: 'off'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'packgeVersion'
 
 - task: PublishBuildArtifacts@1
   displayName: Copy To Drop Binaries
