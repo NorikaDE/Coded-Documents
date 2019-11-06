@@ -34,6 +34,7 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: CopyFiles@2
+  displayName: 'Commissioning Binaries'
   inputs:
     SourceFolder: '$(Agent.BuildDirectory)'
     Contents: '**/bin/$(buildConfiguration)/**/$(rootNameSpace)*.dll'
