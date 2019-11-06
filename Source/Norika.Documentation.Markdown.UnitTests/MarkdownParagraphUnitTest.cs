@@ -11,9 +11,8 @@ namespace Norika.Documentation.Markdown.UnitTests
     [TestClass]
     public class MarkdownParagraphUnitTest
     {
-
         [TestMethod]
-        public void Title_SetWithTestValue_ShouldSetValue()
+        public void Create_WithTitleTestValue_ShouldSetValue()
         {
             Mock<IPrintableMarkdownElementFactory> markdownElementFactory = 
                 new Mock<IPrintableMarkdownElementFactory>();
@@ -22,6 +21,32 @@ namespace Norika.Documentation.Markdown.UnitTests
                 markdownElementFactory.Object);
             
             Assert.AreEqual("Title", document.Title);
+        }
+        
+        [TestMethod]
+        public void Print_WithTitleTestValue_ShouldReturnExpectedMarkdownFormat()
+        {
+            Mock<IPrintableMarkdownElementFactory> markdownElementFactory = 
+                new Mock<IPrintableMarkdownElementFactory>();
+            
+            MarkdownParagraph document = new MarkdownParagraph("Title",
+                markdownElementFactory.Object);
+            
+            Assert.AreEqual("# Title", document.Print());
+        }
+        
+        [TestMethod]
+        public void AddNewContent_FromInterfaceIPrintableParagraphTable_CallMatchingMethodOnElementFactory()
+        {
+            Mock<IPrintableMarkdownElementFactory> markdownElementFactory = 
+                new Mock<IPrintableMarkdownElementFactory>();
+            
+            MarkdownParagraph document = new MarkdownParagraph("Title",
+                markdownElementFactory.Object);
+
+            document.AddNewContent<IPrintableParagraphTable>();
+            
+            markdownElementFactory.Verify(ef => ef.CreateElement<IPrintableParagraphTable>(), Times.Exactly(1));
         }
     }
 }

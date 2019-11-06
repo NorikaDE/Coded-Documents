@@ -13,7 +13,6 @@ namespace Norika.Documentation.Markdown.UnitTests
         [TestMethod]
         public void Create_WithTitle_ShouldSetTitle()
         {
-            
             MarkdownSite site = new MarkdownSite("Test");
             
             Assert.AreEqual("Test", site.Title);

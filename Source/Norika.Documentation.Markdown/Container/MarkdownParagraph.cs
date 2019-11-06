@@ -30,9 +30,19 @@ namespace Norika.Documentation.Markdown.Container
         /// </summary>
         /// <param name="title">Title of the paragraph</param>
         /// <param name="elementFactory">The factory for creating further markdown elements</param>
-        public MarkdownParagraph(string title, IPrintableMarkdownElementFactory elementFactory)
+        public MarkdownParagraph(string title, IPrintableMarkdownElementFactory elementFactory) 
+            : this(title, elementFactory, new MarkdownHeaderBuilder()){}
+
+        /// <summary>
+        /// Creates a new markdown paragraph
+        /// </summary>
+        /// <param name="title">Title of the paragraph</param>
+        /// <param name="elementFactory">The factory for creating further markdown elements</param>
+        /// <param name="headerBuilder">The build for all sub headers in this content</param>
+        public MarkdownParagraph(string title, IPrintableMarkdownElementFactory elementFactory, IMarkdownHeaderBuilder headerBuilder)
         {
             _elementFactory = elementFactory;
+            SetHeaderBuilder(headerBuilder);
             Title = title;
         }
         
@@ -42,14 +52,14 @@ namespace Norika.Documentation.Markdown.Container
         public string Print()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine(_headerBuilder.CreateHeader(Title));
+            stringBuilder.Append($"{_headerBuilder.CreateHeader(Title)}\n");
 
             foreach (IPrintable printable in Content)
             {
-                stringBuilder.AppendLine(printable.Print());
+                stringBuilder.Append($"{printable.Print()}\n");
             }
 
-            return stringBuilder.ToString();
+            return stringBuilder.ToString().TrimEnd();
         }
 
         /// <summary>

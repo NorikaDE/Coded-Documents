@@ -45,6 +45,17 @@ namespace Norika.Documentation.Markdown.UnitTests
         }
         
         [TestMethod]
+        public void CreateElement_FromBaseTypeIPrintable_ShouldReturnDefaultValueNull()
+        {
+            MarkdownElementFactory factory = new MarkdownElementFactory();
+
+            ITestContainer element =
+                factory.CreateMarkdownContainer<ITestContainer>("Test");
+            
+            Assert.IsNull(element);
+        }
+        
+        [TestMethod]
         public void CreateMarkdownContainer_FromIMarkdownParagraph_ShouldReturnInstanceOfMarkdownParagraph()
         {
             MarkdownElementFactory factory = new MarkdownElementFactory();
@@ -130,6 +141,17 @@ namespace Norika.Documentation.Markdown.UnitTests
                 factory.CreateElement<INotExistentElement>();
             
             Assert.AreEqual(default(INotExistentElement), returnValue);
+        }
+        
+        [TestMethod]
+        public void CreateMarkdownElement_FromIPrintableDocumentParagraphHyperlink_ShouldReturnMarkdownHyperlinObject()
+        {
+            MarkdownElementFactory factory = new MarkdownElementFactory();
+
+            IPrintable returnValue =
+                factory.CreateElement<IPrintableDocumentParagraphHyperlink>();
+            
+            Assert.IsInstanceOfType(returnValue, typeof(MarkdownHyperlink));
         }
     }
 }

@@ -5,6 +5,7 @@ using Norika.Documentation.Markdown.Container;
 using Norika.Documentation.Markdown.Container.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Norika.Documentation.Markdown.Statics;
 
 namespace Norika.Documentation.Markdown.UnitTests
 {
@@ -34,6 +35,25 @@ namespace Norika.Documentation.Markdown.UnitTests
             MarkdownDocument document = new MarkdownDocument();
             
             Assert.AreEqual(0, document.Chapters.Count);
+        }
+        
+        [TestMethod]
+        public void DefaultFileExtension_FromInitializedObject_ShouldReturnMarkdownExtension()
+        {
+            MarkdownDocument document = new MarkdownDocument();
+            
+            Assert.AreEqual(MarkdownStatics.MarkdownFileExtension, document.DefaultFileExtension);
+        }
+        
+        [TestMethod]
+        public void CreateElement_FromInterfaceIPrintableParagraphTable_ShouldCallMatchingMethodOnElementFactory()
+        {
+            Mock<IPrintableMarkdownElementFactory> markdownFactoryMock = new Mock<IPrintableMarkdownElementFactory>();
+            MarkdownDocument document = new MarkdownDocument("Test", markdownFactoryMock.Object);
+
+            document.CreateElement<IPrintableParagraphTable>();
+            
+            markdownFactoryMock.Verify(mdf => mdf.CreateElement<IPrintableParagraphTable>(), Times.Exactly(1));
         }
         
         [TestMethod]

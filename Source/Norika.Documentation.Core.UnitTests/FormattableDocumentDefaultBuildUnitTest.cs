@@ -26,5 +26,15 @@ namespace Norika.Documentation.Core.UnitTests
             
             Assert.IsInstanceOfType(returnType, typeof(TestPrintableDocument));
         }
+        
+        [TestMethod]
+        [ExpectedException(typeof(TypeLoadException))]
+        public void GetAssignableClassForInterface_WithClassType_ShouldThrowException()
+        {
+            FormattableDocumentDefaultBuilder defaultBuilder = new FormattableDocumentDefaultBuilder();
+
+            defaultBuilder.GetAssignableClassForInterface(typeof(FormattableDocumentDefaultBuildUnitTest));
+
+        }
     }
 }

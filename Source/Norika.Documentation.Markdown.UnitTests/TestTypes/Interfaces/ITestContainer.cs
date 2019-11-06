@@ -3,7 +3,7 @@ using Norika.Documentation.Markdown.Container.Interfaces;
 
 namespace Norika.Documentation.Markdown.UnitTests.TestTypes.Interfaces
 {
-    public interface INotExistentContainer : IPrintable, IHeaderContainer
+    public interface ITestContainer : IPrintable, IHeaderContainer
     {
     }
 }
