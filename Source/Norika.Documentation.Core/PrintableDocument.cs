@@ -1,6 +1,7 @@
 using Norika.Documentation.Core.FileSystem;
 using Norika.Documentation.Core.FileSystem.Interfaces;
 using Norika.Documentation.Core.Types;
+// ReSharper disable ClassWithVirtualMembersNeverInherited.Global
 
 namespace Norika.Documentation.Core
 {
@@ -8,7 +9,7 @@ namespace Norika.Documentation.Core
     ///     Factory for creating a printable document
     /// </summary>
     /// <typeparam name="T">Type of the output document</typeparam>
-    public sealed class PrintableDocument<T> where T : IPrintableDocument
+    public class PrintableDocument<T> where T : IPrintableDocument
     {
         /// <summary>
         ///     Writer used for file system write access
@@ -60,7 +61,7 @@ namespace Norika.Documentation.Core
         /// </summary>
         /// <param name="title">The titel of the document</param>
         /// <returns>Created document</returns>
-        public T Create(string title)
+        public virtual T Create(string title)
         {
             IPrintableDocument document = _defaultDocumentBuilder.Build<T>();
             document.Title = title;
@@ -73,7 +74,7 @@ namespace Norika.Documentation.Core
         /// <param name="path">Name of the output file</param>
         /// <param name="document">Document that should be saved</param>
         /// <returns>True if the document could be saved</returns>
-        public bool Save(string path, T document)
+        public virtual bool Save(string path, T document)
         {
             return _defaultFileWriter.WriteAllText(path, document.Print());
         }
@@ -84,7 +85,7 @@ namespace Norika.Documentation.Core
         /// <param name="path">Name of the output file</param>
         /// <param name="document">Document that should be saved</param>
         /// <returns>True if the document could be saved</returns>
-        public bool Save(string path, IPrintableDocument document)
+        public virtual bool Save(string path, IPrintableDocument document)
         {
             return _defaultFileWriter.WriteAllText(path, document.Print());
         }
