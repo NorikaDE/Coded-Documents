@@ -7,7 +7,6 @@ namespace Norika.Documentation.Core.Types
     /// </summary>
     public interface IPrintableDocumentCodeBlock : IPrintable
     {
-        
         /// <summary>
         /// Language that is represented by the code block
         /// </summary>

@@ -56,6 +56,5 @@ namespace Norika.Documentation.Markdown.Elements
             }
             _columns.Add(s);
         }
-        
     }
 }

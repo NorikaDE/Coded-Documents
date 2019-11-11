@@ -7,7 +7,6 @@ namespace Norika.Documentation.Core.Types
     /// </summary>
     public interface IPrintableDocument : IPrintable
     {
-        
         /// <summary>
         /// Author of the document
         /// </summary>
