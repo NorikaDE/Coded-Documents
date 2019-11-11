@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Norika.Documentation.Core.FileSystem.Interfaces;
+using Norika.Documentation.Core.Types;
 
 namespace Norika.Documentation.Core.UnitTests
 {
@@ -60,6 +61,23 @@ namespace Norika.Documentation.Core.UnitTests
                 new PrintableDocument<ITestPrintableDocument>(fileWriterMock.Object);
 
             var formattableDocument = document.Create("Title");
+
+            document.Save(outPath, formattableDocument);
+
+            fileWriterMock.Verify(fw => fw.WriteAllText(It.Is<string>(s => s.Equals(outPath)), It.IsAny<string>()));
+        }
+        
+        [TestMethod]
+        public void Save_WithPathFromPrintableDocument_CallFileWriterSaveWithCorrectPath()
+        {
+            var outPath = "/usr/desktop";
+
+            var fileWriterMock = new Mock<IFileWriter>();
+
+            var document =
+                new PrintableDocument<ITestPrintableDocument>(fileWriterMock.Object);
+
+            IPrintableDocument formattableDocument = document.Create("Title");
 
             document.Save(outPath, formattableDocument);
 

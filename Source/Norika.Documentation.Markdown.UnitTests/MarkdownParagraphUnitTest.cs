@@ -36,6 +36,38 @@ namespace Norika.Documentation.Markdown.UnitTests
         }
         
         [TestMethod]
+        public void HeaderContent_FromInitializedObject_ShouldValueFromObjectTitle()
+        {
+            Mock<IPrintableMarkdownElementFactory> markdownElementFactory = 
+                new Mock<IPrintableMarkdownElementFactory>();
+            
+            MarkdownParagraph document = new MarkdownParagraph("Title",
+                markdownElementFactory.Object);
+            
+            Assert.AreEqual("Title", document.HeaderContent);
+        }
+        
+        [TestMethod]
+        public void Print_WithThreePrintableContentItems_ShouldCallPrintForEachItem()
+        {
+            Mock<IPrintableMarkdownElementFactory> markdownElementFactory = 
+                new Mock<IPrintableMarkdownElementFactory>();
+            
+            Mock<IPrintable> printableMock = new Mock<IPrintable>();
+            
+            MarkdownParagraph document = new MarkdownParagraph("Title",
+                markdownElementFactory.Object);
+            
+            document.Content.Add(printableMock.Object);
+            document.Content.Add(printableMock.Object);
+            document.Content.Add(printableMock.Object);
+
+            document.Print();
+            
+            printableMock.Verify(pm => pm.Print(), Times.Exactly(3));
+        }
+        
+        [TestMethod]
         public void AddNewContent_FromInterfaceIPrintableParagraphTable_CallMatchingMethodOnElementFactory()
         {
             Mock<IPrintableMarkdownElementFactory> markdownElementFactory = 
