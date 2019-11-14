@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Norika.Documentation.Core.Types;
 using Norika.Documentation.Markdown.Statics;
+using Norika.Documentation.Markdown.Utilities;
 
 namespace Norika.Documentation.Markdown.Elements
 {
@@ -54,7 +55,7 @@ namespace Norika.Documentation.Markdown.Elements
             {
                 throw new IndexOutOfRangeException();
             }
-            _columns.Add(s);
+            _columns.Add(s.ReplaceNewLineWithSpace());
         }
     }
 }

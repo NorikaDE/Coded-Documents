@@ -59,6 +59,25 @@ namespace Norika.Documentation.Markdown.UnitTests
             
             Assert.AreEqual("|A|B|", tableRow.Print());
         }
+        
+        [TestMethod]
+        public void Add_WithStringContainingNewLine_ShouldReplaceNewLineWithWhiteSpace()
+        {
+            MarkdownTableRow tableRow = new MarkdownTableRow(2);
+            tableRow.Add("A\nB");
+            tableRow.Add("C");
+
+            Assert.AreEqual("|A B|C|", tableRow.Print());
+        }
+        
+        [TestMethod]
+        public void AddRange_WithStringContainingNewLine_ShouldReplaceNewLineWithWhiteSpace()
+        {
+            MarkdownTableRow tableRow = new MarkdownTableRow(2);
+            tableRow.AddRange(new []{ "A\nB", "C" });
+
+            Assert.AreEqual("|A B|C|", tableRow.Print());
+        }
 
         [TestMethod]
         public void Print_WithoutEntry_ShouldReturnEmptyString()
