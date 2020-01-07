@@ -46,7 +46,7 @@ steps:
   displayName: 'Commissioning Test Artifacts'
   inputs:
     SourceFolder: '$(Agent.BuildDirectory)'
-    Contents: '**/bin/$(buildConfiguration)/**/$(rootNameSpace)*.*'
+    Contents: '**/*Tests/bin/$(buildConfiguration)/**/*.*'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/TestArtifacts'
     flattenFolders: false
     
