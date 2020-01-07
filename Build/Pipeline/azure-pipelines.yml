@@ -69,6 +69,12 @@ steps:
     versionEnvVar: 'packgeVersion'
 
 - task: PublishBuildArtifacts@1
+  displayName: Copy To Drop Test Artifacts
+  inputs:
+    ArtifactName: TestArtifacts
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/TestArtifacts'
+
+- task: PublishBuildArtifacts@1
   displayName: Copy To Drop Binaries
   inputs:
     ArtifactName: Binaries
