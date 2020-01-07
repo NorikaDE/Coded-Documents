@@ -41,6 +41,14 @@ steps:
     Contents: '**/bin/$(buildConfiguration)/**/$(rootNameSpace)*.dll'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/Binaries'
     flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Commissioning Test Artifacts'
+  inputs:
+    SourceFolder: '$(Agent.BuildDirectory)'
+    Contents: '**/bin/$(buildConfiguration)/**/$(rootNameSpace)*.*'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/TestArtifacts'
+    flattenFolders: false
     
 - task: DotNetCoreCLI@2
   displayName: Run Tests
