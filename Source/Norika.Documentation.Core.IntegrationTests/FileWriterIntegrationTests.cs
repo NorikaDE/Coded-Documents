@@ -21,7 +21,7 @@ namespace Norika.Documentation.Core.IntegrationTests
         {
             _context = context;
 
-            string testRunIdentifier = $"IntegrationTest_{DateTime.Now:O}";
+            string testRunIdentifier = $"IntegrationTest_{DateTime.Now:yyyy-MM-dd_HH-mm-ss}";
             string testRunDirectoryPath = Path.Combine(Path.GetTempPath(), testRunIdentifier);
 
             TestRunDirectory = Directory.CreateDirectory(testRunDirectoryPath);
