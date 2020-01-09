@@ -108,7 +108,7 @@ namespace Norika.Documentation.Markdown.Elements
 
         public IPrintableParagraphTable WithRow(params string[] columns)
         {
-            var newRow = AddNewRow(columns);
+            AddNewRow(columns);
             return this;
         }
 
