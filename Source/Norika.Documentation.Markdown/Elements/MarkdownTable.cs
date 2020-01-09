@@ -63,9 +63,9 @@ namespace Norika.Documentation.Markdown.Elements
             return newTableRow;
         }
 
-        public void AddHeader(string title)
+        public void AddHeader(string headerTitle)
         {
-            AddHeader(title, PrintableDataRowAlignment.Left);
+            AddHeader(headerTitle, PrintableDataRowAlignment.Left);
         }
 
         public void AddHeader(string headerTitle, PrintableDataRowAlignment alignment)

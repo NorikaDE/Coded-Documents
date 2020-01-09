@@ -41,8 +41,8 @@ namespace Norika.Documentation.Core.Types
         /// <summary>
         /// Adds an range of headers to the table
         /// </summary>
-        /// <param name="header">Header title range</param>
-        void AddHeaderRange(params string[] header);
+        /// <param name="headerTitles">Header title range</param>
+        void AddHeaderRange(params string[] headerTitles);
 
         /// <summary>
         /// Appends a new header to the table
