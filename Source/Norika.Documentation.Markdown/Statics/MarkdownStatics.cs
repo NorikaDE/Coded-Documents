@@ -10,22 +10,27 @@ namespace Norika.Documentation.Markdown.Statics
         /// <summary>
         /// Default markdown file extension
         /// </summary>
-        public static string MarkdownFileExtension = "md";
+        public static string MarkdownFileExtension => "md";
 
         /// <summary>
         /// Default markdown landing page name
         /// </summary>
-        public static string MarkdownLandingPageName = "readme.md";
+        public static string MarkdownLandingPageName => "readme";
+        
+        /// <summary>
+        /// Default markdown landing page file name
+        /// </summary>
+        public static string MarkdownLandingPageFileName => $"{MarkdownLandingPageName}.{MarkdownFileExtension}";
 
         /// <summary>
         /// Default markdown header identifier prefix
         /// </summary>
-        public static string MarkdownHeaderIdentifier = "#";
+        public static string MarkdownHeaderIdentifier => "#";
 
         /// <summary>
         /// Default markdown table row cell separator
         /// </summary>
-        public static string MarkdownTableColumnSeparator = "|";
+        public static string MarkdownTableColumnSeparator => "|";
         
         /// <summary>
         /// Creates a markdown header prefix dependent on the given
