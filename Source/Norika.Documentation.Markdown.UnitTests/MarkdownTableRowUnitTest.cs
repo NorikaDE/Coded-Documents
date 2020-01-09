@@ -49,7 +49,7 @@ namespace Norika.Documentation.Markdown.UnitTests
         }
         
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
+        [ExpectedException(typeof(InvalidOperationException))]
         public void Print_WithThreeColumnsAndCapacityTwo_ShouldThrowException()
         {
             MarkdownTableRow tableRow = new MarkdownTableRow(2);

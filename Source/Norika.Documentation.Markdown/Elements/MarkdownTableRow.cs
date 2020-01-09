@@ -53,7 +53,7 @@ namespace Norika.Documentation.Markdown.Elements
         {
             if (_columns.Count >= _capacity)
             {
-                throw new IndexOutOfRangeException();
+                throw new InvalidOperationException($"Element '{s}' could not be added because the column is full.");
             }
             _columns.Add(s.ReplaceNewLineWithSpace());
         }

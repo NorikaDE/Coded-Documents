@@ -6,7 +6,7 @@ namespace Norika.Documentation.Markdown.Utilities
 {
     public static class StringUtilities
     {
-        public static string DefaultLineSeparator = "\n";
+        public static string DefaultLineSeparator => "\n";
         
         /// <summary>
         /// Splits the string by the default msbuild new line separator

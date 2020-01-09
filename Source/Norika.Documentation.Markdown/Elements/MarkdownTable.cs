@@ -63,34 +63,34 @@ namespace Norika.Documentation.Markdown.Elements
             return newTableRow;
         }
 
-        public void AddHeader(string header)
+        public void AddHeader(string title)
         {
-            AddHeader(header, PrintableDataRowAlignment.Left);
+            AddHeader(title, PrintableDataRowAlignment.Left);
         }
 
-        public void AddHeader(string title, PrintableDataRowAlignment alignment)
+        public void AddHeader(string headerTitle, PrintableDataRowAlignment alignment)
         {
             if(_rows.Count > 0)
                 throw new NotSupportedException("Please specify headers before content!");
             
             _headers.Add(new PrintableParagraphTableRowSpecification()
             {
-                Title = title,
+                Title = headerTitle,
                 Alignment = alignment
             });
         }
 
-        public void AddHeaderRange(params string[] headers)
+        public void AddHeaderRange(params string[] headerTitles)
         {
-            foreach (string header in headers)
+            foreach (string header in headerTitles)
             {
                 AddHeader(header);
             }
         }
 
-        public IPrintableParagraphTable WithHeader(string header)
+        public IPrintableParagraphTable WithHeader(string headerTitle)
         {
-            AddHeader(header);
+            AddHeader(headerTitle);
             return this;
         }
 

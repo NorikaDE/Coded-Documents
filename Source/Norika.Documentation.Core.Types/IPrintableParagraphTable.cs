@@ -28,15 +28,15 @@ namespace Norika.Documentation.Core.Types
         /// <summary>
         /// Adds a new header to the table
         /// </summary>
-        /// <param name="title">Header title</param>
-        void AddHeader(string title);
+        /// <param name="headerTitle">Header title</param>
+        void AddHeader(string headerTitle);
 
         /// <summary>
         /// Adds a new header to the table
         /// </summary>
-        /// <param name="title">Header title</param>
+        /// <param name="headerTitle">Header title</param>
         /// <param name="alignment">Alignment option for the columns under the header</param>
-        void AddHeader(string title, PrintableDataRowAlignment alignment);
+        void AddHeader(string headerTitle, PrintableDataRowAlignment alignment);
         
         /// <summary>
         /// Adds an range of headers to the table

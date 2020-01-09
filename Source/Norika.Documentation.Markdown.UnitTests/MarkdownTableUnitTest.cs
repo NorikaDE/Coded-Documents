@@ -139,13 +139,12 @@ namespace Norika.Documentation.Markdown.UnitTests
         }
         
         [TestMethod]
-        [ExpectedException(typeof(IndexOutOfRangeException))]
+        [ExpectedException(typeof(InvalidOperationException))]
         public void AddRow_WithOneHeaderAndOneDataRowWithTwoHeaders_ShouldThrowIndexOutOfRangeException()
         {
             IPrintableParagraphTable table = new MarkdownTable();
 
             table.WithHeader("a").WithRow("b", "c");
-            
         }
         
         [TestMethod]

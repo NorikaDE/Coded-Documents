@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Norika.Documentation.Markdown.Statics
 {
@@ -45,12 +46,12 @@ namespace Norika.Documentation.Markdown.Statics
             {
                 throw new ArgumentOutOfRangeException(nameof(depth));
             }
-            string header = MarkdownHeaderIdentifier;
+            StringBuilder headerBuilder = new StringBuilder(MarkdownHeaderIdentifier);
             for (int i = 0; i < depth; i++)
             {
-                header += MarkdownHeaderIdentifier;
+                headerBuilder.Append(MarkdownHeaderIdentifier);
             }
-            return header;
+            return headerBuilder.ToString();
         }
     }
 }
